@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image" href="images/favicon-96x96.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="Dr. Pooja Physio Care"
+      content="ui html-vite and tailwindcss 3.1"
+    />
+    <title>Dr. Pooja Physio Care</title>
+    <script src="js/theme.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/i18next@21.6.2/dist/umd/i18next.min.js"></script>
+    <link rel="stylesheet" href="css/app.fc1f4517.css" />
+  </head>
+  <style>
+    .custom-gradient {
+      background: linear-gradient(to right, rgb(255, 0, 0), black);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .dark .custom-gradient {
+      background: linear-gradient(to right, rgb(255, 0, 0), white);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .text-hover-red:hover {
+      background: linear-gradient(to right, rgb(255, 0, 0), black);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+  </style>
+  <body
+    class="min-h-screen bg-white selection:bg-primary/10 selection:text-primary dark:bg-gray-900"
+  >
+    <header>
+      <nav
+        id="navbar"
+        class="fixed inset-x-0 z-20 w-full border-b border-gray-100 bg-white/80 backdrop-blur dark:border-gray-700/30 dark:bg-gray-900/80"
+      >
+        <div class="mx-auto px-4 sm:px-12 xl:max-w-6xl xl:px-0">
+          <div
+            class="relative flex flex-wrap items-center justify-between gap-6 lg:gap-0 lg:py-4"
+          >
+            <div
+              class="relative z-20 flex w-full justify-between md:px-0 lg:w-max"
+            >
+              <a
+                href="/"
+                aria-label="logo"
+                id="logo"
+                class="flex items-center space-x-2"
+              >
+                <img
+                  class="h-10 w-auto"
+                  src="images/logo1.png"
+                  alt="team illustration"
+                />
+              </a>
+
+              <button
+                aria-label="humburger"
+                id="hamburger"
+                class="relative -mr-6 p-6 lg:hidden"
+              >
+                <div
+                  aria-hidden="true"
+                  class="m-auto h-0.5 w-5 rounded bg-sky-900 transition duration-300 dark:bg-gray-300"
+                ></div>
+                <div
+                  aria-hidden="true"
+                  class="m-auto mt-2 h-0.5 w-5 rounded bg-sky-900 transition duration-300 dark:bg-gray-300"
+                ></div>
+              </button>
+            </div>
+            <div
+              id="layer"
+              aria-hidden="true"
+              class="fixed inset-0 z-10 h-screen w-screen origin-bottom scale-y-0 bg-white/70 backdrop-blur-2xl transition duration-500 dark:bg-gray-900/70 lg:hidden"
+            ></div>
+            <div
+              id="navlinks"
+              class="invisible absolute top-full left-0 z-20 w-full origin-top-right translate-y-1 scale-90 flex-col flex-wrap justify-end gap-6 rounded-3xl border border-gray-100 bg-white p-8 opacity-0 shadow-2xl shadow-gray-600/10 transition-all duration-300 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none lg:visible lg:relative lg:flex lg:w-auto lg:translate-y-0 lg:scale-100 lg:flex-row lg:items-center lg:gap-0 lg:border-none lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none lg:peer-checked:translate-y-0 dark:lg:bg-transparent"
+            >
+              <div class="text-gray-600 dark:text-gray-300 lg:pr-4">
+                <ul
+                  class="space-y-6 text-lg font-medium tracking-wide lg:flex lg:space-y-0"
+                >
+                  <li>
+                    <a
+                      class="activeMenu block transition text-hover-red dark:hover:text-primaryLight md:px-4"
+                      href="index.html"
+                    >
+                      <span data-i18n="home">Home</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="activeMenu block transition text-hover-red dark:hover:text-primaryLight md:px-4"
+                      href="AboutMikro.html"
+                    >
+                      <span data-i18n="about">About</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="activeMenu block transition text-hover-red dark:hover:text-primaryLight md:px-4"
+                      href="ProductsServices.html"
+                    >
+                      <span data-i18n="products">Services</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="activeMenu block transition text-hover-red dark:hover:text-primaryLight md:px-4"
+                      href="Contact.html"
+                    >
+                      <span data-i18n="contact">Contact Us</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="mt-12 -ml-1 flex w-full lg:hidden flex-col space-y-2 border-primary/10 dark:border-gray-700 sm:flex-row md:w-max lg:mt-0 lg:mr-6 lg:space-y-0 lg:border-l lg:pl-6">
+                <a class="relative ml-auto flex h-9 w-full items-center justify-center before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-primaryLight sm:px-4 lg:before:border lg:before:border-gray-200 lg:before:bg-gray-100 lg:dark:before:bg-gray-800" href="tel:8707714491">
+                    <span class="relative flex items-center space-x-2 text-sm font-semibold text-white dark:text-gray-900 lg:text-primary lg:dark:text-white">
+                        <img 
+                            class="h-8 w-8 rounded-full" 
+                            src="images/whitecall.png" 
+                            alt="user avatar"
+                        />
+                        <span>Call us</span>
+                    </span>
+                </a>
+            </div>
+              
+              <div class="lg:pr-4">
+                <button
+                  aria-label="switch theme"
+                  class="switcher group relative hidden h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-600 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="transition relative m-auto hidden h-5 w-5 fill-gray-500 duration-300 group-hover:rotate-180 group-hover:fill-yellow-400 dark:block dark:fill-gray-300"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="transition relative m-auto h-5 w-5 fill-gray-500 duration-300 group-hover:-rotate-90 group-hover:fill-blue-900 dark:hidden"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div
+              id="PhoneNavlinks"
+              class="fixed top-3 right-14 z-20 sm:right-24 lg:hidden flex items-center space-x-4"
+            >
+              <button
+                aria-label="switch theme"
+                class="switcher group relative flex h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="transition relative m-auto hidden h-5 w-5 fill-gray-500 duration-300 group-hover:rotate-180 group-hover:fill-yellow-400 dark:block dark:fill-gray-300"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="transition relative m-auto h-5 w-5 fill-gray-500 duration-300 group-hover:-rotate-90 group-hover:fill-blue-900 dark:hidden"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="pt-32 sm:pt-40 md:pt-48">
+      <div
+        aria-hidden="true"
+        class="absolute inset-0 top-60 grid grid-cols-2 -space-x-52 opacity-50 dark:opacity-30"
+      >
+        <div
+          class="h-60 bg-gradient-to-br from-primary to-purple-400 blur-[106px] dark:from-blue-700"
+        ></div>
+        <div
+          class="h-40 bg-gradient-to-r from-cyan-400 to-sky-300 blur-[106px] dark:to-indigo-600"
+        ></div>
+      </div>
+      <div class="relative mx-auto px-4 sm:px-12 xl:max-w-6xl xl:px-0">
+        <div class="text-center">
+          <h2
+            class="text-3xl font-bold text-gray-800 dark:text-white md:text-4xl xl:text-5xl"
+          >
+            <span data-i18n="our">Our</span>
+            <span class="custom-gradient" data-i18n="productportfolio"
+              >Services</span
+            >
+          </h2>
+        </div>
+
+        <div
+          id="wire-slider"
+          class="slider relative mx-auto px-4 bg-gradient-to-b from-gray-50 via-gray-100 to-gray-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 sm:px-12 xl:max-w-6xl xl:px-0"
+        >
+          <div class="mb-12 grid gap-6 lg:grid-cols-1 mt-12">
+            <a
+              class="rounded-3xl border border-gray-100 bg-white p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none"
+            >
+              <div class="mx-auto px-6 lg:px-10">
+                <div class="text-center mb-10">
+                  <h2
+                    class="text-2xl font-semibold text-gray-900 dark:text-white md:text-3xl xl:text-3xl"
+                  >
+                    <span data-i18n="toolingfor"
+                      >Your Personalized Path to Recovery</span
+                    >
+                  </h2>
+                </div>
+
+                <!-- Slider Container -->
+                <div class="relative mt-10">
+                  <div
+                    id="slider-container"
+                    class="flex flex-wrap justify-center gap-8 gap-8 md:gap-6 lg:gap-0 transition-transform duration-300 ease-in-out"
+                  >
+                    <!-- Slide 1 -->
+                    <div
+                      class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-2"
+                    >
+                      <div
+                        class="group relative rounded-lg shadow-lg bg-white dark:bg-gray-800 overflow-hidden"
+                      >
+                        <img
+                          src="images/shoulder-pain.avif"
+                          alt="Arthritis treatment"
+                          class="h-56 w-full object-cover transform transition group-hover:scale-105"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-40"
+                        ></div>
+                        <div class="imgText">
+                          <h3
+                            class="text-lg font-semibold"
+                            data-i18n="drawingdies"
+                          >
+                            Shoulder pain
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div
+                      class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-2"
+                    >
+                      <div
+                        class="group relative rounded-lg shadow-lg bg-white dark:bg-gray-800 overflow-hidden"
+                      >
+                        <img
+                          src="images/backpain.avif"
+                          alt="Bunching"
+                          class="h-56 w-full object-cover transform transition group-hover:scale-105"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-40"
+                        ></div>
+                        <div class="imgText">
+                          <h3 class="text-lg font-semibold">
+                            <span data-i18n="bunching">Back pain</span>
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div
+                      class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-2"
+                    >
+                      <div
+                        class="group relative rounded-lg shadow-lg bg-white dark:bg-gray-800 overflow-hidden"
+                      >
+                        <img
+                          src="images/spinal.avif"
+                          alt="Extrusion Tools"
+                          class="h-56 w-full object-cover transform transition group-hover:scale-105"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-40"
+                        ></div>
+                        <div class="imgText">
+                          <h3 class="text-lg font-semibold">
+                            <span data-i18n="extrusiontools"
+                              >Spinal injuries
+                            </span>
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div
+                      class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-2"
+                    >
+                      <div
+                        class="group relative rounded-lg shadow-lg bg-white dark:bg-gray-800 overflow-hidden"
+                      >
+                        <img
+                          src="images/footankle.jpg"
+                          alt="Consumibles"
+                          class="h-56 w-full object-cover transform transition group-hover:scale-105"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-40"
+                        ></div>
+                        <div class="imgText">
+                          <h3
+                            class="text-lg font-semibold"
+                            data-i18n="consumibles"
+                          >
+                            Foot and ankle pain
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Navigation Arrows -->
+                  <button
+                    id="prev"
+                    class="button-pre-next-sa absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full z-20"
+                  >
+                    &lt;
+                  </button>
+                  <button
+                    id="next"
+                    class="button-pre-next-sa absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full z-20"
+                  >
+                    &gt;
+                  </button>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div
+          id="ultra-precision"
+          class="slider relative mx-auto px-4 bg-gradient-to-b from-gray-50 via-gray-100 to-gray-200 dark:from-gray-900 dark:via-gray-800 dark:to-gray-700 sm:px-12 xl:max-w-6xl xl:px-0"
+        >
+          <div class="mb-12 grid gap-6 lg:grid-cols-1 mt-12">
+            <a
+              class="rounded-3xl border border-gray-100 bg-white p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none"
+            >
+              <div class="mx-auto px-6 lg:px-10">
+                <!-- Slider Container -->
+                <div class="relative mt-10">
+                  <div
+                    id="slider-container-ultra-precision"
+                    class="flex flex-wrap justify-center gap-8 gap-8 md:gap-6 lg:gap-0 transition-transform duration-300 ease-in-out"
+                  >
+                    <!-- Slide 1 -->
+                    <div
+                      class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-2"
+                    >
+                      <div
+                        class="group relative rounded-lg shadow-lg bg-white dark:bg-gray-800 overflow-hidden"
+                      >
+                        <img
+                          src="images/balancepain.jpg"
+                          alt="Space & Defence Tools"
+                          class="h-56 w-full object-cover transform transition group-hover:scale-105"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-40"
+                        ></div>
+                        <div class="imgText">
+                          <h3
+                            class="text-lg font-semibold"
+                            data-i18n="spaceanddefence"
+                          >
+                            Balance exercise therapy
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div
+                      class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-2"
+                    >
+                      <div
+                        class="group relative rounded-lg shadow-lg bg-white dark:bg-gray-800 overflow-hidden"
+                      >
+                        <img
+                          src="images/hippain.avif"
+                          alt="Rotogravure Tools"
+                          class="h-56 w-full object-cover transform transition group-hover:scale-105"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-40"
+                        ></div>
+                        <div class="imgText">
+                          <h3
+                            class="text-lg font-semibold"
+                            data-i18n="rotogravure"
+                          >
+                            Hip pain
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div
+                      class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-2"
+                    >
+                      <div
+                        class="group relative rounded-lg shadow-lg bg-white dark:bg-gray-800 overflow-hidden"
+                      >
+                        <img
+                          src="images/knee.jpg"
+                          alt="Watch & Jewellery Tools"
+                          class="h-56 w-full object-cover transform transition group-hover:scale-105"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-40"
+                        ></div>
+                        <div class="imgText">
+                          <h3
+                            class="text-lg font-semibold"
+                            data-i18n="watchjewellery"
+                          >
+                            Knee pain
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-2"
+                    >
+                      <div
+                        class="group relative rounded-lg shadow-lg bg-white dark:bg-gray-800 overflow-hidden"
+                      >
+                        <img
+                          src="images/heatpain.jpg"
+                          alt="Electro-optics Tools"
+                          class="h-56 w-full object-cover transform transition group-hover:scale-105"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-40"
+                        ></div>
+                        <div class="imgText">
+                          <h3
+                            class="text-lg font-semibold"
+                            data-i18n="elctro-optic"
+                          >
+                            Heat therapy
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-2"
+                    >
+                      <div
+                        class="group relative rounded-lg shadow-lg bg-white dark:bg-gray-800 overflow-hidden"
+                      >
+                        <img
+                          src="images/geriastic.jpg"
+                          alt="Ophthalmic Tools"
+                          class="h-56 w-full object-cover transform transition group-hover:scale-105"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-40"
+                        ></div>
+                        <div class="imgText">
+                          <h3
+                            class="text-lg font-semibold"
+                            data-i18n="ophthalmic"
+                          >
+                            Geriatric physiotherapy
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-2"
+                    >
+                      <div
+                        class="group relative rounded-lg shadow-lg bg-white dark:bg-gray-800 overflow-hidden"
+                      >
+                        <img
+                          src="images/nuro.avif"
+                          alt="Automotive Tools"
+                          class="h-56 w-full object-cover transform transition group-hover:scale-105"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-40"
+                        ></div>
+                        <div class="imgText">
+                          <h3
+                            class="text-lg font-semibold"
+                            data-i18n="automotive"
+                          >
+                            Neurological physiotherapy
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Slide 6 -->
+                    <div
+                      class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-2"
+                    >
+                      <div
+                        class="group relative rounded-lg shadow-lg bg-white dark:bg-gray-800 overflow-hidden"
+                      >
+                        <img
+                          src="images/physical.jpg"
+                          alt="Aerospace Tools"
+                          class="h-56 w-full object-cover transform transition group-hover:scale-105"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-40"
+                        ></div>
+                        <div class="imgText">
+                          <h3
+                            class="text-lg font-semibold"
+                            data-i18n="aerospace"
+                          >
+                            Physical therapy
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Slide 7 -->
+                    <div
+                      class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-2"
+                    >
+                      <div
+                        class="group relative rounded-lg shadow-lg bg-white dark:bg-gray-800 overflow-hidden"
+                      >
+                        <img
+                          src="images/knee.jpg"
+                          alt="Space & Defence Tools"
+                          class="h-56 w-full object-cover transform transition group-hover:scale-105"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-40"
+                        ></div>
+                        <div class="imgText">
+                          <h3
+                            class="text-lg font-semibold"
+                            data-i18n="spaceanddefence"
+                          >
+                            Post-surgical rehabilitation
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-2"
+                    >
+                      <div
+                        class="group relative rounded-lg shadow-lg bg-white dark:bg-gray-800 overflow-hidden"
+                      >
+                        <img
+                          src="images/backpain.avif"
+                          alt="Space & Defence Tools"
+                          class="h-56 w-full object-cover transform transition group-hover:scale-105"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-40"
+                        ></div>
+                        <div class="imgText">
+                          <h3
+                            class="text-lg font-semibold"
+                            data-i18n="spaceanddefence"
+                          >
+                            Arthritis treatment
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-2"
+                    >
+                      <div
+                        class="group relative rounded-lg shadow-lg bg-white dark:bg-gray-800 overflow-hidden"
+                      >
+                        <img
+                          src="images/Rotogravure.png"
+                          alt="Space & Defence Tools"
+                          class="h-56 w-full object-cover transform transition group-hover:scale-105"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-40"
+                        ></div>
+                        <div class="imgText">
+                          <h3
+                            class="text-lg font-semibold"
+                            data-i18n="spaceanddefence"
+                          >
+                            Therapeutic exercise
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-2"
+                    >
+                      <div
+                        class="group relative rounded-lg shadow-lg bg-white dark:bg-gray-800 overflow-hidden"
+                      >
+                        <img
+                          src="images/Ophthalmic.png"
+                          alt="Space & Defence Tools"
+                          class="h-56 w-full object-cover transform transition group-hover:scale-105"
+                        />
+                        <div
+                          class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-40"
+                        ></div>
+                        <div class="imgText">
+                          <h3
+                            class="text-lg font-semibold"
+                            data-i18n="spaceanddefence"
+                          >
+                            Vestibular rehabilitation
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Navigation Arrows -->
+                  <button
+                    id="prev-ultra"
+                    class="button-pre-next-sa absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full z-20"
+                  >
+                    &lt;
+                  </button>
+                  <button
+                    id="next-ultra"
+                    class="button-pre-next-sa absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full z-20"
+                  >
+                    &gt;
+                  </button>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="mt-32 mx-auto px-4 sm:px-12 xl:max-w-6xl xl:px-0">
+      <div class="space-y-6 md:flex lg:items-center gap-10 lg:space-y-0">
+        <div class="md:5/12 lg:w-6/12">
+          <div
+            class="relative bg-gray-100 before:absolute before:inset-0 before:scale-x-110 before:border-y before:border-gray-200 after:absolute after:inset-0 after:scale-y-110 after:border-x after:border-gray-200 dark:bg-gray-800 dark:before:border-gray-700 dark:after:border-gray-700"
+          >
+            <div
+              class="relative h-96 overflow-hidden py-10 sm:h-[32rem] lg:p-20"
+            >
+              <div
+                data-target="panel-0"
+                class="panel-preview absolute inset-0 z-10 flex items-end overflow-hidden opacity-100 transition duration-500"
+              >
+                <img
+                  src="images/serviceimgphy1.jpg"
+                  class="h-full w-full object-cover"
+                  alt="screenshot"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="md:7/12 lg:w-6/12">
+          <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
+            Rediscover the joy of movement with our comprehensive physiotherapy
+            solutions. Our expert team is dedicated to helping you live
+            pain-free and regain your strength, mobility, and confidence. We
+            provide personalized care with a focus on long-term recovery and
+            well-being.
+          </p>
+
+          <h3 class="mt-6 text-xl font-semibold text-gray-800 dark:text-white">
+            We Specialize In:
+          </h3>
+          <ul
+            class="mt-4 text-gray-600 dark:text-gray-300 text-lg list-disc list-inside"
+          >
+            <li>
+              <strong>Arthritis Relief Therapy</strong> – Alleviate joint pain
+              and enhance mobility.
+            </li>
+            <li>
+              <strong>Shoulder Pain Recovery</strong> – Restore strength and
+              full range of motion.
+            </li>
+            <li>
+              <strong>Back Pain Management</strong> – Get lasting relief with
+              targeted therapies.
+            </li>
+            <li>
+              <strong>Spinal Injury Rehabilitation</strong> – Personalized
+              programs for effective recovery.
+            </li>
+            <li>
+              <strong>Foot and Ankle Pain Solutions</strong> – Regain balance
+              and stability.
+            </li>
+            <li>
+              <strong>Hip Pain Treatment</strong> – Improve movement and reduce
+              discomfort.
+            </li>
+            <li>
+              <strong>Knee Pain Relief</strong> – Comprehensive care for
+              pain-free walking.
+            </li>
+            <li>
+              <strong>Heat Therapy</strong> – Soothing pain relief and enhanced
+              healing.
+            </li>
+            <li>
+              <strong>Geriatric Physiotherapy</strong> – Gentle, effective care
+              for senior mobility.
+            </li>
+          </ul>
+
+          <p class="mt-6 text-lg text-gray-600 dark:text-gray-300">
+            <strong
+              >Take the first step towards a healthier, more active life. Let us
+              help you move better, feel better, and live better.</strong
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer
+      class="mt-32 border-t border-gray-100 pt-16 pb-8 dark:border-gray-800 bg-gray-100 dark:bg-gray-800"
+    >
+      <div
+        class="m-auto space-y-8 px-4 text-gray-600 dark:text-gray-400 sm:px-12 xl:max-w-6xl xl:px-0"
+      >
+        <div class="grid grid-cols-8 gap-6 md:gap-0">
+          <div class="col-span-8 md:col-span-2 lg:col-span-3">
+            <div
+              class="flex h-full items-center justify-between gap-6 border-b border-white py-6 dark:border-gray-800 md:flex-col md:items-start md:justify-between md:space-y-6 md:border-none md:py-0"
+            >
+              <div>
+                <a aria-label="ampire logo" class="flex items-center" href="/">
+                  <img
+                    class="h-16 w-auto"
+                    src="images/logo1.png"
+                    alt="team illustration"
+                  />
+                </a>
+                <a class="mt-2 inline-block text-base font-medium"
+                  ><span data-i18n="joinusto"
+                    >Move Freely, Live Fully.
+                    Start Your Recovery Today!</span
+                  ></a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-span-8 md:col-span-6 lg:col-span-5">
+            <div class="grid grid-cols-2 gap-6 pb-16 sm:grid-cols-2 md:pl-16">
+              <div>
+                <h2
+                  class="text-lg font-semibold text-gray-800 dark:text-gray-200"
+                  data-i18n="usefulLinks"
+                >
+                  Useful Links
+                </h2>
+                <ul class="mt-4 list-inside space-y-4 font-medium">
+                  <li>
+                    <a
+                      href="index.html"
+                      class="activeMenu text-base duration-100 text-hover-red dark:hover:text-primaryLight"
+                      data-i18n="home"
+                      >Home</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="AboutMikro.html"
+                      class="activeMenu text-base duration-100 text-hover-red dark:hover:text-primaryLight"
+                      data-i18n="about"
+                      >About</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="ProductsServices.html"
+                      class="activeMenu text-base duration-100 text-hover-red dark:hover:text-primaryLight"
+                      data-i18n="products"
+                      >Services</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="Contact.html"
+                      class="activeMenu text-base duration-100 text-hover-red dark:hover:text-primaryLight"
+                      data-i18n="contact"
+                      >Contact Us</a
+                    >
+                  </li>
+                </ul>
+                <ul
+                  class="space-y-6 text-lg font-medium tracking-wide lg:flex lg:space-y-0"
+                ></ul>
+              </div>
+              <div class="connect-section">
+                <div>
+                  <h2
+                    class="text-lg font-semibold text-gray-800 dark:text-gray-200"
+                    data-i18n="letsConnect"
+                  >
+                    Let’s Connect
+                  </h2>
+                  <ul class="mt-4 list-inside space-y-4 font-medium">
+                    <!-- Email -->
+                    <li class="flex items-center gap-2">
+                      <svg
+                        class="email-icon w-6 h-6 min-w-[24px] min-h-[24px]"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 1920 1920"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <defs>
+                          <linearGradient
+                            id="lightGradient"
+                            x1="0%"
+                            y1="0%"
+                            x2="100%"
+                            y2="0%"
+                          >
+                            <stop offset="0%" stop-color="#ff0000" />
+                            <stop offset="100%" stop-color="#000000" />
+                          </linearGradient>
+                          <linearGradient
+                            id="darkGradient"
+                            x1="0%"
+                            y1="0%"
+                            x2="100%"
+                            y2="0%"
+                          >
+                            <stop offset="0%" stop-color="#ff0000" />
+                            <stop offset="100%" stop-color="#ffffff" />
+                          </linearGradient>
+                        </defs>
+                        <g id="SVGRepo_iconCarrier">
+                          <path
+                            class="gradient-fill"
+                            d="M1920 428.266v1189.54l-464.16-580.146-88.203 70.585 468.679 585.904H83.684l468.679-585.904-88.202-70.585L0 1617.805V428.265l959.944 832.441L1920 428.266ZM1919.932 226v52.627l-959.943 832.44L.045 278.628V226h1919.887Z"
+                          />
+                        </g>
+                      </svg>
+                      <a
+                        href="mailto:poojaphysio@gmail.com"
+                        class="text-hover-red dark:hover:text-primaryLight break-words"
+                      >
+                        poojaphysio@gmail.com
+                      </a>
+                    </li>
+
+                    <!-- Phone -->
+                    <li class="flex items-center gap-2">
+                      <svg
+                        version="1.1"
+                        id="Layer_1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 512 512"
+                        xml:space="preserve"
+                        width="24px"
+                        height="24px"
+                        class="min-w-[24px] min-h-[24px]"
+                        fill="#000000"
+                      >
+                        <g id="SVGRepo_iconCarrier">
+                          <ellipse
+                            style="fill: #b80000"
+                            cx="256"
+                            cy="256"
+                            rx="256"
+                            ry="255.832"
+                          ></ellipse>
+                          <g>
+                            <rect
+                              x="331.753"
+                              y="288.52"
+                              transform="matrix(0.7879 -0.6158 0.6158 0.7879 -131.5202 286.6909)"
+                              style="fill: #000000"
+                              width="37.344"
+                              height="91.504"
+                            ></rect>
+                            <path
+                              style="fill: #000000"
+                              d="M348.696,393.736L292.344,321.6c-51.16-14.248-87.064-60.168-88.544-113.256l-56.352-72.096 c0,0-53.392,76.488,30.4,183.64S348.696,393.736,348.696,393.736z"
+                            ></path>
+                            <rect
+                              x="186.814"
+                              y="103.169"
+                              transform="matrix(0.7879 -0.6158 0.6158 0.7879 -48.1226 158.1244)"
+                              style="fill: #000000"
+                              width="37.344"
+                              height="91.504"
+                            ></rect>
+                          </g>
+                        </g>
+                      </svg>
+                      <a
+                        href="tel:8707714491"
+                        class="text-hover-red dark:hover:text-primaryLight"
+                      >
+                        8707714491
+                      </a>
+                    </li>
+
+                    <!-- Location -->
+                    <li class="flex items-center gap-2">
+                      <svg
+                        class="location-icon w-20 h-8"
+                        width="32px"
+                        height="32px"
+                        viewBox="-4 0 32 32"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+                        fill="#000000"
+                      >
+                        <defs>
+                          <!-- Light Mode Gradient (Red to Black) -->
+                          <linearGradient
+                            id="lightGradient"
+                            x1="0"
+                            y1="0"
+                            x2="1"
+                            y2="1"
+                          >
+                            <stop offset="0%" stop-color="red"></stop>
+                            <stop offset="100%" stop-color="black"></stop>
+                          </linearGradient>
+
+                          <!-- Dark Mode Gradient (Red to White) -->
+                          <linearGradient
+                            id="darkGradient"
+                            x1="0"
+                            y1="0"
+                            x2="1"
+                            y2="1"
+                          >
+                            <stop offset="0%" stop-color="red"></stop>
+                            <stop offset="100%" stop-color="white"></stop>
+                          </linearGradient>
+                        </defs>
+
+                        <g id="SVGRepo_iconCarrier">
+                          <title>location</title>
+                          <g
+                            id="Page-1"
+                            stroke="none"
+                            stroke-width="1"
+                            fill="none"
+                            fill-rule="evenodd"
+                            sketch:type="MSPage"
+                          >
+                            <g
+                              id="Icon-Set-Filled"
+                              sketch:type="MSLayerGroup"
+                              transform="translate(-106.000000, -413.000000)"
+                              fill="#000000"
+                            >
+                              <!-- Path with gradient fill based on theme -->
+                              <path
+                                class="gradient-fill"
+                                d="M118,422 C116.343,422 115,423.343 115,425 C115,426.657 116.343,428 118,428 C119.657,428 121,426.657 121,425 C121,423.343 119.657,422 118,422 L118,422 Z M118,430 C115.239,430 113,427.762 113,425 C113,422.238 115.239,420 118,420 C120.761,420 123,422.238 123,425 C123,427.762 120.761,430 118,430 L118,430 Z M118,413 C111.373,413 106,418.373 106,425 C106,430.018 116.005,445.011 118,445 C119.964,445.011 130,429.95 130,425 C130,418.373 124.627,413 118,413 L118,413 Z"
+                                id="location"
+                                fill="url(#lightGradient)"
+                              ></path>
+                            </g>
+                          </g>
+                        </g>
+                      </svg>
+                      <a
+                        href="https://maps.app.goo.gl/KcNRN1qXRa9U2v4D6"
+                        target="_blank"
+                        class="text-hover-red dark:hover:text-primaryLight break-words"
+                      >
+                        Dwarka, New Delhi - 110075, India
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="border-t border-gray-100 pt-8 dark:border-gray-800 flex items-center justify-center gap-4 font-medium text-gray-500 text-gray-700 dark:text-white sm:text-base"
+      >
+        <span class="order-last sm:order-first"
+          >©2025 Dr. Pooja Physio Care | All Rights Reserved.</span
+        >
+      </div>
+    </footer>
+
+    <div id="google_translate_element" class="language-dropdown"></div>
+    <script src="js/app.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=initGoogleTranslate"></script>
+  </body>
+</html>

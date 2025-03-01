@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image" href="images/favicon-96x96.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="Dr. Pooja Physio Care"
+      content="ui html-vite and tailwindcss 3.1"
+    />
+    <title>Dr. Pooja Physio Care</title>
+    <script src="js/theme.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next@21.6.2/dist/umd/i18next.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+    />
+    <link rel="stylesheet" href="css/app.fc1f4517.css" />
+  </head>
+  <style>
+    .custom-gradient {
+      background: linear-gradient(to right, rgb(255, 0, 0), black);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .dark .custom-gradient {
+      background: linear-gradient(to right, rgb(255, 0, 0), white);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .text-hover-red:hover {
+      background: linear-gradient(to right, rgb(255, 0, 0), black);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .map-container {
+      width: 100%;
+      height: 400px;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  </style>
+  <body
+    class="min-h-screen bg-white selection:bg-primary/10 selection:text-primary dark:bg-gray-900"
+  >
+    <header>
+      <nav
+        id="navbar"
+        class="fixed inset-x-0 z-20 w-full border-b border-gray-100 bg-white/80 backdrop-blur dark:border-gray-700/30 dark:bg-gray-900/80"
+      >
+        <div class="mx-auto px-4 sm:px-12 xl:max-w-6xl xl:px-0">
+          <div
+            class="relative flex flex-wrap items-center justify-between gap-6 lg:gap-0 lg:py-4"
+          >
+            <div
+              class="relative z-20 flex w-full justify-between md:px-0 lg:w-max"
+            >
+              <a
+                href="/"
+                aria-label="logo"
+                id="logo"
+                class="flex items-center space-x-2"
+              >
+                <img
+                  class="h-10 w-auto"
+                  src="images/logo1.png"
+                  alt="team illustration"
+                />
+              </a>
+
+              <button
+                aria-label="humburger"
+                id="hamburger"
+                class="relative -mr-6 p-6 lg:hidden"
+              >
+                <div
+                  aria-hidden="true"
+                  class="m-auto h-0.5 w-5 rounded bg-sky-900 transition duration-300 dark:bg-gray-300"
+                ></div>
+                <div
+                  aria-hidden="true"
+                  class="m-auto mt-2 h-0.5 w-5 rounded bg-sky-900 transition duration-300 dark:bg-gray-300"
+                ></div>
+              </button>
+            </div>
+            <div
+              id="layer"
+              aria-hidden="true"
+              class="fixed inset-0 z-10 h-screen w-screen origin-bottom scale-y-0 bg-white/70 backdrop-blur-2xl transition duration-500 dark:bg-gray-900/70 lg:hidden"
+            ></div>
+            <div
+              id="navlinks"
+              class="invisible absolute top-full left-0 z-20 w-full origin-top-right translate-y-1 scale-90 flex-col flex-wrap justify-end gap-6 rounded-3xl border border-gray-100 bg-white p-8 opacity-0 shadow-2xl shadow-gray-600/10 transition-all duration-300 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none lg:visible lg:relative lg:flex lg:w-auto lg:translate-y-0 lg:scale-100 lg:flex-row lg:items-center lg:gap-0 lg:border-none lg:bg-transparent lg:p-0 lg:opacity-100 lg:shadow-none lg:peer-checked:translate-y-0 dark:lg:bg-transparent"
+            >
+              <div class="text-gray-600 dark:text-gray-300 lg:pr-4">
+                <ul
+                  class="space-y-6 text-lg font-medium tracking-wide lg:flex lg:space-y-0"
+                >
+                  <li>
+                    <a
+                      class="activeMenu block transition text-hover-red dark:hover:text-primaryLight md:px-4"
+                      href="index.html"
+                    >
+                      <span data-i18n="home">Home</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="activeMenu block transition text-hover-red dark:hover:text-primaryLight md:px-4"
+                      href="AboutMikro.html"
+                    >
+                      <span data-i18n="about">About</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="activeMenu block transition text-hover-red dark:hover:text-primaryLight md:px-4"
+                      href="ProductsServices.html"
+                    >
+                      <span data-i18n="products">Services</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="activeMenu block transition text-hover-red dark:hover:text-primaryLight md:px-4"
+                      href="Contact.html"
+                    >
+                      <span data-i18n="contact">Contact Us</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-12 -ml-1 flex w-full lg:hidden flex-col space-y-2 border-primary/10 dark:border-gray-700 sm:flex-row md:w-max lg:mt-0 lg:mr-6 lg:space-y-0 lg:border-l lg:pl-6">
+                <a class="relative ml-auto flex h-9 w-full items-center justify-center before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-primaryLight sm:px-4 lg:before:border lg:before:border-gray-200 lg:before:bg-gray-100 lg:dark:before:bg-gray-800" href="tel:8707714491">
+                    <span class="relative flex items-center space-x-2 text-sm font-semibold text-white dark:text-gray-900 lg:text-primary lg:dark:text-white">
+                        <img 
+                            class="h-8 w-8 rounded-full" 
+                            src="images/whitecall.png" 
+                            alt="user avatar"
+                        />
+                        <span>Call us</span>
+                    </span>
+                </a>
+            </div>
+              <div class="lg:pr-4">
+                <button
+                  aria-label="switch theme"
+                  class="switcher group relative hidden h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-600 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 lg:flex"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="transition relative m-auto hidden h-5 w-5 fill-gray-500 duration-300 group-hover:rotate-180 group-hover:fill-yellow-400 dark:block dark:fill-gray-300"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="transition relative m-auto h-5 w-5 fill-gray-500 duration-300 group-hover:-rotate-90 group-hover:fill-blue-900 dark:hidden"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div
+              id="PhoneNavlinks"
+              class="fixed top-3 right-14 z-20 sm:right-24 lg:hidden flex items-center space-x-4"
+            >
+              <button
+                aria-label="switch theme"
+                class="switcher group relative flex h-9 w-9 rounded-full before:absolute before:inset-0 before:rounded-full before:border before:border-gray-200 before:bg-gray-50 before:bg-gradient-to-b before:transition-transform before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="transition relative m-auto hidden h-5 w-5 fill-gray-500 duration-300 group-hover:rotate-180 group-hover:fill-yellow-400 dark:block dark:fill-gray-300"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="transition relative m-auto h-5 w-5 fill-gray-500 duration-300 group-hover:-rotate-90 group-hover:fill-blue-900 dark:hidden"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="pt-32 sm:pt-40 md:pt-48">
+      <div
+        aria-hidden="true"
+        class="absolute inset-0 top-60 grid grid-cols-2 -space-x-52 opacity-50 dark:opacity-30"
+      >
+        <div
+          class="h-60 bg-gradient-to-br from-primary to-purple-400 blur-[106px] dark:from-blue-700"
+        ></div>
+        <div
+          class="h-40 bg-gradient-to-r from-cyan-400 to-sky-300 blur-[106px] dark:to-indigo-600"
+        ></div>
+      </div>
+      <div class="mx-auto px-4 sm:px-12 xl:max-w-6xl xl:px-0">
+        <div class="relative z-10 text-center md:mx-auto md:w-5/6 lg:w-4/6">
+          <h1
+            class="relative text-center text-4xl font-bold text-gray-900 dark:text-white sm:text-5xl md:text-6xl"
+          >
+            <span data-i18n="getintouchh">Get in touch</span>
+            <span class="custom-gradient" data-i18n="withus">with us.</span>
+          </h1>
+          <p
+            class="mt-6 text-gray-700 dark:text-gray-300"
+            data-i18n="wellbehappy"
+          >
+            We're here to support your recovery and well-being. Contact us to
+            learn how our physiotherapy services can help you feel your best.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-12 sm:mx-auto sm:w-full lg:grid-cols-2">
+          <div class="relative flex-1">
+            <div
+              class="relative rounded-3xl border border-gray-100 bg-white p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none sm:p-12"
+            >
+              <div
+                class="absolute inset-0 hidden scale-105 rounded-3xl bg-gradient-to-b from-transparent dark:block"
+              ></div>
+              <div class="relative">
+                <h2 class="text-2xl font-bold text-gray-800 dark:text-white">
+                  <span data-i18n="whatshould">What should we know?</span>
+                </h2>
+                <div class="mt-8 mb-6 space-y-4">
+                  <div>
+                    <label
+                      for="name"
+                      class="mb-2 block text-gray-600 dark:text-gray-300"
+                    >
+                      <span data-i18n="yourname">Your name</span>
+                      <span class="text-xl text-red-500 dark:text-red-400"
+                        >*</span
+                      >
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      class="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 text-gray-600 transition-shadow duration-300 focus:ring-2 dark:border-gray-700"
+                    />
+                    <div
+                      id="name-error"
+                      class="text-sm text-red-500 hidden"
+                    ></div>
+                  </div>
+                  <div>
+                    <label
+                      for="email"
+                      class="mb-2 block text-gray-600 dark:text-gray-300"
+                    >
+                      <span data-i18n="workemail"> Email</span>
+                      <span class="text-xl text-red-500 dark:text-red-400"
+                        >*</span
+                      >
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      class="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 text-gray-600 transition-shadow duration-300 focus:ring-2 dark:border-gray-700"
+                    />
+                    <div
+                      id="email-error"
+                      class="text-sm text-red-500 hidden"
+                    ></div>
+                  </div>
+                  <div>
+                    <label
+                      for="phone"
+                      class="mb-2 block text-gray-600 dark:text-gray-300"
+                    >
+                      <span data-i18n="phone">Phone</span>
+                      <span class="text-xl text-red-500 dark:text-red-400"
+                        >*</span
+                      >
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      class="peer block w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 text-gray-600 transition-shadow duration-300 focus:ring-2 dark:border-gray-700"
+                    />
+                    <div
+                      id="phone-error"
+                      class="text-sm text-red-500 hidden"
+                    ></div>
+                  </div>
+                  <div>
+                    <label
+                      for="message"
+                      class="mb-2 block text-gray-600 dark:text-gray-300"
+                    >
+                      <span data-i18n="message">Message</span>
+                    </label>
+                    <textarea
+                      id="message"
+                      class="peer block h-28 w-full rounded-lg border border-gray-200 bg-transparent px-4 py-2 text-gray-600 transition-shadow duration-300 focus:ring-2 dark:border-gray-700"
+                    ></textarea>
+                    <div
+                      id="message-error"
+                      class="text-sm text-red-500 hidden"
+                    ></div>
+                  </div>
+                </div>
+                <p
+                  id="status-message"
+                  class="mt-4 mb-4 ml-6 text-lg font-semibold"
+                ></p>
+                <a
+                  href="javascript:void(0);"
+                  class="submit-link relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:transition-transform before:duration-300 active:duration-75 active:before:scale-95 button-background"
+                >
+                  <button type="button" id="submit-button">
+                    <span
+                      class="relative text-base font-semibold text-white dark:text-dark"
+                      data-i18n="submit"
+                      >Submit</span
+                    >
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex-1">
+            <div
+              class="relative rounded-3xl border border-gray-100 bg-white p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:bg-gray-800 dark:shadow-none lg:px-12"
+            >
+              <div class="space-y-6 p-8 sm:p-12 gap-16">
+                <div class="flex items-center justify-center">
+                  <h2
+                    class="text-2xl font-semibold text-gray-800 dark:text-white"
+                  >
+                    <span data-i18n="contactinfo">Contact Information</span>
+                  </h2>
+                </div>
+                <div class="relative flex justify-around">
+                  <div class="flex items-end">
+                    <div
+                      class="relative mx-auto flex h-40 w-56 items-center justify-center"
+                    >
+                    <img
+                    class="h-16 w-auto"
+                    src="images/logo1.png"
+                    alt="team illustration"
+                  />
+                    </div>
+                  </div>
+                </div>
+                <p
+                class="mt-6 flex items-center justify-center space-x-4 text-center text-lg text-gray-600 dark:text-gray-300"
+              >
+                <a
+                  href="tel:8707714491"
+                  class="flex items-center space-x-2 text-blue-600 dark:text-blue-400"
+                >
+                  <img
+                    class="h-8 w-8 rounded-full"
+                    src="images/callpng.png"
+                    alt="user avatar"
+                  />
+                  <span class="font-semibold" > 8707714491</span>
+                </a>
+              </p>
+                <p
+                  class="mt-6 flex items-center justify-center space-x-4 text-center text-lg text-gray-600 dark:text-gray-300"
+                >
+                  <a
+                    href="mailto: poojaphysio@gmail.com?subject=Inquiry&body=Hello,"
+                    class="flex items-center space-x-2 text-blue-600 dark:text-blue-400"
+                  >
+                    <img
+                      class="h-8 w-8 rounded-full"
+                      src="images/icons8-mail-50.png"
+                      alt="user avatar"
+                    />
+                    <span class="font-semibold"> poojaphysio@gmail.com</span>
+                  </a>
+                </p>
+                <p
+                  class="flex items-center justify-center space-x-4 text-center text-lg text-gray-600 dark:text-gray-300"
+                >
+                  <a
+                    href=" https://maps.app.goo.gl/KcNRN1qXRa9U2v4D6"
+                    target="_blank"
+                    class="flex items-center space-x-2 text-blue-600 dark:text-blue-400"
+                  >
+                    <img
+                      class="h-8 w-8"
+                      src="images/address.png"
+                      alt="user avatar"
+                    />
+                    <span class="font-semibold"
+                      >Dwarka, New Delhi - 110075, India</span
+                    >
+                  </a>
+                </p>
+
+                <a
+                  href="mailto: poojaphysio@gmail.com?subject=Inquiry&amp;body=Hello,"
+                  class="relative flex h-11 items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:transition-transform before:duration-300 active:duration-75 button-background"
+                >
+                  <button
+                    type="button"
+                    class="relative rounded-full text-white button-style"
+                  >
+                    <span
+                      class="relative text-base font-semibold text-gray-300 dark:text-gray-900"
+                      data-i18n="sendusanemail"
+                      >Send us an Email</span
+                    >
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-32 mx-auto px-4 sm:px-12 xl:max-w-6xl xl:px-0">
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.629318357908!2d77.04013157521054!3d28.59693797568625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1aaf99999999%3A0x8e6e6e6e6e6e6e6e!2sDwarka%2C%20New%20Delhi%2C%20Delhi%20110075%2C%20India!5e0!3m2!1sen!2sin!4v1737806789123!5m2!1sen!2sin"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </section>
+
+    <footer
+      class="mt-32 border-t border-gray-100 pt-16 pb-8 dark:border-gray-800 bg-gray-100 dark:bg-gray-800"
+    >
+      <div
+        class="m-auto space-y-8 px-4 text-gray-600 dark:text-gray-400 sm:px-12 xl:max-w-6xl xl:px-0"
+      >
+        <div class="grid grid-cols-8 gap-6 md:gap-0">
+          <div class="col-span-8 md:col-span-2 lg:col-span-3">
+            <div
+              class="flex h-full items-center justify-between gap-6 border-b border-white py-6 dark:border-gray-800 md:flex-col md:items-start md:justify-between md:space-y-6 md:border-none md:py-0"
+            >
+              <div>
+                <a aria-label="ampire logo" class="flex items-center" href="/">
+                  <img
+                    class="h-16 w-auto"
+                    src="images/logo1.png"
+                    alt="team illustration"
+                  />
+                </a>
+                <a class="mt-2 inline-block text-base font-medium"
+                  ><span data-i18n="joinusto"
+                    >Move Freely, Live Fully.
+                    Start Your Recovery Today!</span
+                  ></a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col-span-8 md:col-span-6 lg:col-span-5">
+            <div class="grid grid-cols-2 gap-6 pb-16 sm:grid-cols-2 md:pl-16">
+              <div>
+                <h2
+                  class="text-lg font-semibold text-gray-800 dark:text-gray-200"
+                  data-i18n="usefulLinks"
+                >
+                  Useful Links
+                </h2>
+                <ul class="mt-4 list-inside space-y-4 font-medium">
+                  <li>
+                    <a
+                      href="index.html"
+                      class="activeMenu text-base duration-100 text-hover-red dark:hover:text-primaryLight"
+                      data-i18n="home"
+                      >Home</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="AboutMikro.html"
+                      class="activeMenu text-base duration-100 text-hover-red dark:hover:text-primaryLight"
+                      data-i18n="about"
+                      >About</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="ProductsServices.html"
+                      class="activeMenu text-base duration-100 text-hover-red dark:hover:text-primaryLight"
+                      data-i18n="products"
+                      >Services</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="Contact.html"
+                      class="activeMenu text-base duration-100 text-hover-red dark:hover:text-primaryLight"
+                      data-i18n="contact"
+                      >Contact Us</a
+                    >
+                  </li>
+                </ul>
+                <ul
+                  class="space-y-6 text-lg font-medium tracking-wide lg:flex lg:space-y-0"
+                ></ul>
+              </div>
+              <div class="connect-section">
+                <div>
+                  <h2
+                    class="text-lg font-semibold text-gray-800 dark:text-gray-200"
+                    data-i18n="letsConnect"
+                  >
+                    Let’s Connect
+                  </h2>
+                  <ul class="mt-4 list-inside space-y-4 font-medium">
+                    <!-- Email -->
+                    <li class="flex items-center gap-2">
+                      <svg
+                        class="email-icon w-6 h-6 min-w-[24px] min-h-[24px]"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 1920 1920"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <defs>
+                          <linearGradient
+                            id="lightGradient"
+                            x1="0%"
+                            y1="0%"
+                            x2="100%"
+                            y2="0%"
+                          >
+                            <stop offset="0%" stop-color="#ff0000" />
+                            <stop offset="100%" stop-color="#000000" />
+                          </linearGradient>
+                          <linearGradient
+                            id="darkGradient"
+                            x1="0%"
+                            y1="0%"
+                            x2="100%"
+                            y2="0%"
+                          >
+                            <stop offset="0%" stop-color="#ff0000" />
+                            <stop offset="100%" stop-color="#ffffff" />
+                          </linearGradient>
+                        </defs>
+                        <g id="SVGRepo_iconCarrier">
+                          <path
+                            class="gradient-fill"
+                            d="M1920 428.266v1189.54l-464.16-580.146-88.203 70.585 468.679 585.904H83.684l468.679-585.904-88.202-70.585L0 1617.805V428.265l959.944 832.441L1920 428.266ZM1919.932 226v52.627l-959.943 832.44L.045 278.628V226h1919.887Z"
+                          />
+                        </g>
+                      </svg>
+                      <a
+                        href="mailto:poojaphysio@gmail.com"
+                        class="text-hover-red dark:hover:text-primaryLight break-words"
+                      >
+                        poojaphysio@gmail.com
+                      </a>
+                    </li>
+
+                    <!-- Phone -->
+                    <li class="flex items-center gap-2">
+                      <svg
+                        version="1.1"
+                        id="Layer_1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        viewBox="0 0 512 512"
+                        xml:space="preserve"
+                        width="24px"
+                        height="24px"
+                        class="min-w-[24px] min-h-[24px]"
+                        fill="#000000"
+                      >
+                        <g id="SVGRepo_iconCarrier">
+                          <ellipse
+                            style="fill: #b80000"
+                            cx="256"
+                            cy="256"
+                            rx="256"
+                            ry="255.832"
+                          ></ellipse>
+                          <g>
+                            <rect
+                              x="331.753"
+                              y="288.52"
+                              transform="matrix(0.7879 -0.6158 0.6158 0.7879 -131.5202 286.6909)"
+                              style="fill: #000000"
+                              width="37.344"
+                              height="91.504"
+                            ></rect>
+                            <path
+                              style="fill: #000000"
+                              d="M348.696,393.736L292.344,321.6c-51.16-14.248-87.064-60.168-88.544-113.256l-56.352-72.096 c0,0-53.392,76.488,30.4,183.64S348.696,393.736,348.696,393.736z"
+                            ></path>
+                            <rect
+                              x="186.814"
+                              y="103.169"
+                              transform="matrix(0.7879 -0.6158 0.6158 0.7879 -48.1226 158.1244)"
+                              style="fill: #000000"
+                              width="37.344"
+                              height="91.504"
+                            ></rect>
+                          </g>
+                        </g>
+                      </svg>
+                      <a
+                        href="tel:8707714491"
+                        class="text-hover-red dark:hover:text-primaryLight"
+                      >
+                        8707714491
+                      </a>
+                    </li>
+
+                    <!-- Location -->
+                    <li class="flex items-center gap-2">
+                      <svg
+                        class="location-icon w-20 h-8"
+                        width="32px"
+                        height="32px"
+                        viewBox="-4 0 32 32"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
+                        fill="#000000"
+                      >
+                        <defs>
+                          <!-- Light Mode Gradient (Red to Black) -->
+                          <linearGradient
+                            id="lightGradient"
+                            x1="0"
+                            y1="0"
+                            x2="1"
+                            y2="1"
+                          >
+                            <stop offset="0%" stop-color="red"></stop>
+                            <stop offset="100%" stop-color="black"></stop>
+                          </linearGradient>
+
+                          <!-- Dark Mode Gradient (Red to White) -->
+                          <linearGradient
+                            id="darkGradient"
+                            x1="0"
+                            y1="0"
+                            x2="1"
+                            y2="1"
+                          >
+                            <stop offset="0%" stop-color="red"></stop>
+                            <stop offset="100%" stop-color="white"></stop>
+                          </linearGradient>
+                        </defs>
+
+                        <g id="SVGRepo_iconCarrier">
+                          <title>location</title>
+                          <g
+                            id="Page-1"
+                            stroke="none"
+                            stroke-width="1"
+                            fill="none"
+                            fill-rule="evenodd"
+                            sketch:type="MSPage"
+                          >
+                            <g
+                              id="Icon-Set-Filled"
+                              sketch:type="MSLayerGroup"
+                              transform="translate(-106.000000, -413.000000)"
+                              fill="#000000"
+                            >
+                              <!-- Path with gradient fill based on theme -->
+                              <path
+                                class="gradient-fill"
+                                d="M118,422 C116.343,422 115,423.343 115,425 C115,426.657 116.343,428 118,428 C119.657,428 121,426.657 121,425 C121,423.343 119.657,422 118,422 L118,422 Z M118,430 C115.239,430 113,427.762 113,425 C113,422.238 115.239,420 118,420 C120.761,420 123,422.238 123,425 C123,427.762 120.761,430 118,430 L118,430 Z M118,413 C111.373,413 106,418.373 106,425 C106,430.018 116.005,445.011 118,445 C119.964,445.011 130,429.95 130,425 C130,418.373 124.627,413 118,413 L118,413 Z"
+                                id="location"
+                                fill="url(#lightGradient)"
+                              ></path>
+                            </g>
+                          </g>
+                        </g>
+                      </svg>
+                      <a
+                        href="https://maps.app.goo.gl/KcNRN1qXRa9U2v4D6"
+                        target="_blank"
+                        class="text-hover-red dark:hover:text-primaryLight break-words"
+                      >
+                        Dwarka, New Delhi - 110075, India
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="border-t border-gray-100 pt-8 dark:border-gray-800 flex items-center justify-center gap-4 font-medium text-gray-500 text-gray-700 dark:text-white sm:text-base"
+      >
+        <span class="order-last sm:order-first"
+          >©2025 Dr. Pooja Physio Care | All Rights Reserved.</span
+        >
+      </div>
+    </footer>
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/emailjs-com/2.6.4/email.min.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
